@@ -1,10 +1,5 @@
 import sqlite3
 
-
-import sqlite3
-
-from Poder import poder
-
 # CRIANDO A TABELA DE PODER DO MONSTRO
 
 def monstro_poder():
@@ -48,3 +43,5 @@ def adicinando(monstro_id, poder_id):
    con.close()
 
 #adicinando(0, 0)
+
+

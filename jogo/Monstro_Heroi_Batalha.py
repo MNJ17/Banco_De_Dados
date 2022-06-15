@@ -17,7 +17,6 @@ def monstro_heroi_batalha():
       FOREIGN KEY(monstro_id) REFERENCES Monstro(id),
       FOREIGN KEY(batalha_id) REFERENCES Batalhas(id)
    )
-
    """
 
    cursor.execute(sql_creat)
@@ -34,7 +33,6 @@ def adicinando(heroi_id, monstro_id, batalha_id):
   cursor = con.cursor()
 
   sql_adicinando =f"""
-
   INSERT INTO
   Monstro_Heroi_Batalha(heroi_id, monstro_id, batalha_id)
   VALUES({heroi_id}, {monstro_id}, {batalha_id})
@@ -45,3 +43,4 @@ def adicinando(heroi_id, monstro_id, batalha_id):
   con.close()
 
 #adicinando()
+

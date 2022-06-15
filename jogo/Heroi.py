@@ -16,8 +16,8 @@ def herois():
         defesa INT NOT NULL,
         vida INT NOT NULL,
         mana TEXT NOT NULL,
-        modelos TEXT NOT NULL,
-        xp TEXT NOT NULL
+        moeda INT NOT NULL,
+        xp INT NOT NULL
    )
 """
 
@@ -29,7 +29,7 @@ def herois():
 
 # ADICIONANDO ITENS NA TABELA
 
-def adicionando_herois(nome, nivel, forca, defesa, vida, mana, modelos, xp):
+def adicionando_herois(nome, nivel, forca, defesa, vida, mana, moeda, xp):
 
   con = sqlite3.connect('jogo.sqlite')
   cursor = con.cursor()
@@ -37,8 +37,8 @@ def adicionando_herois(nome, nivel, forca, defesa, vida, mana, modelos, xp):
   sql_adicionando = f"""
 
      INSERT INTO
-     Heroi(nome, nível, força, defesa, vida, mana, modelos, xp)
-     VALUES ('{nome}', {nivel}, {forca}, {defesa}, {vida}, '{mana}', '{modelos}', '{xp}')
+     Heroi(nome, nível, força, defesa, vida, mana, moeda, xp)
+     VALUES ('{nome}', {nivel}, {forca}, {defesa}, {vida}, '{mana}', {moeda}, {xp})
 
   """
 
@@ -46,4 +46,6 @@ def adicionando_herois(nome, nivel, forca, defesa, vida, mana, modelos, xp):
   con.commit()
   con.close()
 
-#adicionando_herois('', 0, 0, 0, 0, '', '', '')
+#adicionando_herois('', 0, 0,0,0,'0',0,0)
+
+

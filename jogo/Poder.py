@@ -12,7 +12,7 @@ def poder ():
       id SERIAL PRIMARY KEY,
       tipo TEXT NOT NULL,
       dano INT NOT NULL,
-      custo_mana TEXT NOT NULL
+      custo_mana INT NOT NULL
     )
 
   """
@@ -34,7 +34,7 @@ def adicinando_poder(tipo, dano, custo_mana):
 
     INSERT INTO
     Poder(tipo, dano, custo_mana)
-    VALUES('{tipo}', {dano}, '{custo_mana}')
+    VALUES('{tipo}', {dano}, {custo_mana})
 
   """
 
@@ -42,5 +42,5 @@ def adicinando_poder(tipo, dano, custo_mana):
   con.commit()
   con.close()
 
-#adicinando_poder('', 0, '')
+#adicinando_poder('', 0, 0)
 
